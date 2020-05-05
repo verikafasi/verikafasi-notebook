@@ -11,4 +11,5 @@ RUN $CONDA_DIR/envs/${conda_env}/bin/python -m ipykernel install --user --name=$
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
 
-COPY . /home/$NB_USER/
+RUN rm -rf /home/$NB_USER/work && \
+    fix-permissions /home/$NB_USER
